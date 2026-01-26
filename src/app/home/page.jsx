@@ -8,7 +8,8 @@ import Cardslider from "./cardslider/page";
 import Cardservice from "./cardservice/page";
 import Ratingcard from "./ratingcard/page";
 import Packages from "./packages/page";
-
+import Logoslider from "./logoslider/page";
+import Imgsec from "./video/page";
 
 
 export default function HomePage() {
@@ -20,10 +21,10 @@ export default function HomePage() {
   return (
   
 <>
-  {/* Top Blue Section */}
+
   <div className="relative bg-blue-950 h-[60px] flex justify-center">
     
-    {/* White Navbar */}
+   
     <div className="absolute top-full translate-y-[-50%] bg-white rounded-[7px] px-10 py-6 shadow-xl flex items-center w-170 z-20">
       
       <div className="flex-shrink-0">
@@ -70,6 +71,8 @@ export default function HomePage() {
   <Cardservice />
   <Ratingcard/>
   <Packages/>
+  <Logoslider/>
+  <Imgsec/>
   
 </>
 

@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image';
-
+import styles from "@/app/styles/Home.module.css";
 import img1 from  '@/assets/Package1.webp';
 import img2 from  '@/assets/Package2.webp';
 import img3 from  '@/assets/Package3.webp';
@@ -29,19 +29,19 @@ const packages = [
 
   return (
     <>
-    <div  className='bg-white'>
+    <div  className={styles.container}>
        <h1 className="text-blue-600 text-4xl font-semibold text-center font-serif p-10">
   Umrah Packages 2026
 </h1>
-<div className="grid grid-cols-3 gap-6">
+<div className="grid grid-cols-3 gap-6 rounded-3x1">
   {packages.map((packag, index) => (
     <div
       key={index}
       className={`bg-white transition-shadow duration-300 hover:shadow-xl 
       ${index === 3 ? "col-span-3 flex justify-center" : ""}`}
     >
-      <div className="w-[330px]">
-        <div className="bg-amber-50">
+      <div className="w-[330px] ">
+        <div className="bg-amber-50 rounded-3xl overflow-hidden">
           <Image
             src={packag.img}
             alt="rating"

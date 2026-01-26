@@ -12,3 +12,19 @@
 .slider::-webkit-scrollbar {
   display: none;
 }
+
+.marquee {
+  display: flex;
+  gap: 16px; /* match Tailwind gap-4 */
+  width: calc((50px + 16px) * 14 * 2); /* total width of duplicated logos */
+  animation: marquee 20s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}

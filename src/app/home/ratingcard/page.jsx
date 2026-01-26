@@ -56,8 +56,8 @@ const ratingimg =[
   return (
     <>
 <div className=" flex items-center justify-center">
-  <div className="bg-blue-100 text-blue-900 flex items-center justify-center text-center h-[180px] w-[400px]">
-    <p className='font-bold'>
+  <div className="  flex items-center justify-center text-center h-[180px] w-[400px]">
+    <p className='font-bold text-blue-600'>
       Popular Destination <br />
       Unravel the World’s Beauty with Al Rayyan Travel! <br />
       From the Holiest Pilgrimages to the Most Captivating Cruises, We’ve Got <br />
