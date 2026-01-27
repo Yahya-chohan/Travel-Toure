@@ -1,8 +1,5 @@
 "use client";
-import { useState } from "react";
 import Card from "@/components/CardSlider";
-import styles from "@/app/styles/Home.module.css";
-
 import icon1 from "@/assets/icon1.webp";
 import icon2 from "@/assets/icon2.webp";
 import icon3 from "@/assets/icon3.webp";
@@ -26,18 +23,18 @@ export default function CardSlider() {
       image: icon2,
     },
     {
-      id: 7,
+      id: 3,
       singleimg: icon5,
     },
     {
-      id: 3,
+      id: 4,
       title: "AIR DESK",
       detail:
         "Preferred airfare rates on business and premium economy, plus logistical and emergency assistance",
       image: icon3,
     },
     {
-      id: 4,
+      id: 5,
       title: "SIGHTSEEING",
       detail:
         "Customized private and small group touring options to maximize your experience.",
@@ -45,21 +42,26 @@ export default function CardSlider() {
     },
   ];
 
-  const [currentIndex, setCurrentIndex] = useState(0);
-
   return (
-    <div className={styles.container}>
-      <div className={styles.sliderWrapper}>
-        <div
-          className={styles.slider}
-          style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-        >
-          {cardData.map((item) => (
-            <div key={item.id} className={styles.slide}>
-              <Card card={item} />
-            </div>
-          ))}
-        </div>
+    <div className="w-full   py-8 px-4">
+      <h2 className="text-2xl sm:text-3xl font-bold text-center mb-6">
+        Our Services
+      </h2>
+
+      {/* Cards Container (single row, responsive) */}
+      <div className="flex flex-wrap justify-center gap-4">
+        {cardData.map((item) => (
+          <div
+            key={item.id}
+            className="
+                    lg:w-1/6
+              flex
+              justify-center
+            "
+          >
+            <Card card={item} className="w-full h-full" />
+          </div>
+        ))}
       </div>
     </div>
   );
