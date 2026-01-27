@@ -1,39 +1,39 @@
 
 .cardContainer {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* wider cards */
-  gap: 20px;
-  background-color: #001e4b; 
-  padding: 20px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  padding: 40px;
 }
 
 
 .card {
-  background-color: #0a2e6f; 
-  color: white; 
-  padding: 30px; 
-  border-radius: 8px;
-  transition: all 0.3s ease;
-  cursor: pointer;
-
+  background: #152b5a;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 
 
 .card:hover {
-  background-color: #1a4db7; 
-  color: #a0d8ff;
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
 }
 
-.card h1, .card h4 {
-  margin-bottom: 10px;
-  font-size: 40px;
+.card h4 {
+  font-size: 20px;
   font-weight: 600;
+  margin-bottom: 12px;
+  color: #ffffff;
 }
+
 
 .card p {
-  font-size: 14px;
-  line-height: 1.5;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #a5b3c7;
 }
 
 .cardratingmain {
@@ -47,7 +47,7 @@
 .cardrating {
   width: 120px;
   height: 140px;
-  background-color: #ffffff;
+  background-color: #152b5a;
   border-radius: 12px;
   padding: 12px;
 
@@ -80,6 +80,19 @@
 
 .cardratingp {
   font-size: 12px;
-  color: #6b7280;
+  color: #aebad3;
   margin-top: 4px;
+}
+@media (max-width: 640px) {
+  .cardContainer {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+}
+
+/* 📲 Tablet */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .cardContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }

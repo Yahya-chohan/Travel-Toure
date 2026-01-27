@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Card from "@/components/CardSlider";
 import styles from "@/app/styles/Home.module.css";
+
 import icon1 from "@/assets/icon1.webp";
 import icon2 from "@/assets/icon2.webp";
 import icon3 from "@/assets/icon3.webp";
@@ -17,7 +18,6 @@ export default function CardSlider() {
         "With our unwavering commitment, our travel concierge team is ready to support you throughout every stage of your journey before, during, and after your travels",
       image: icon1,
     },
-   
     {
       id: 2,
       title: "EXCLUSIVE HOTEL PERKS",
@@ -25,8 +25,8 @@ export default function CardSlider() {
         "Indulge in negotiated benefits at our partner hotels, including daily breakfast, resort credits, room upgrades, and other enticing amenities",
       image: icon2,
     },
-     {
-       id: 7,
+    {
+      id: 7,
       singleimg: icon5,
     },
     {
@@ -36,7 +36,6 @@ export default function CardSlider() {
         "Preferred airfare rates on business and premium economy, plus logistical and emergency assistance",
       image: icon3,
     },
-    
     {
       id: 4,
       title: "SIGHTSEEING",
@@ -48,20 +47,6 @@ export default function CardSlider() {
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const goToSlide = (index) => {
-    setCurrentIndex(index);
-  };
-
-  const nextSlide = () => {
-    setCurrentIndex((prev) => (prev + 1) % cardData.length);
-  };
-
-  const prevSlide = () => {
-    setCurrentIndex((prev) =>
-      prev === 0 ? cardData.length - 1 : prev - 1
-    );
-  };
-
   return (
     <div className={styles.container}>
       <div className={styles.sliderWrapper}>
@@ -69,14 +54,13 @@ export default function CardSlider() {
           className={styles.slider}
           style={{ transform: `translateX(-${currentIndex * 100}%)` }}
         >
-          {cardData.map((item , ) => (
-            <Card key={item.id} card={item} />
+          {cardData.map((item) => (
+            <div key={item.id} className={styles.slide}>
+              <Card card={item} />
+            </div>
           ))}
         </div>
       </div>
-
-    
-
     </div>
   );
 }
